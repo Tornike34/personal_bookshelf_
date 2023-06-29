@@ -1,0 +1,9 @@
+<!DOCTYPE html>
+<title>Author Details</title>
+<body>
+<h1>Author Details</h1>
+<p>Name: {{ author.name }}</p>
+<p>Date of Birth: {{ author.date_of_birth }}</p>
+<p>Nationality: {{ author.nationality }}</p>
+<a href="{% url 'author_edit' author.id %}">Edit</a>
+</body>

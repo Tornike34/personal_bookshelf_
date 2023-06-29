@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Edit Book</title>
+</head>
+<body>
+    <h1>Edit Book</h1>
+    <form action="{% url 'book_edit' book_id %}" method="post">
+        {% csrf_token %}
+        <label for="title">Title:</label>
+        <input type="text" id="title" name="title" value="{{ book.title }}"><br>
+        <label for="author">Author:</label>
+        <input type="text" id="author" name="author" value="{{ book.author }}"><br>
+        <label for="publication_date">Publication Date:</label>
+        <input type="date" id="publication_date" name="publication_date" value="{{ book.publication_date }}"><br>
+        <input type="submit" value="Save">
+        <a href="{% url 'book_detail' book_id %}">Cancel</a>
+    </form>
+</body>
+</html>
